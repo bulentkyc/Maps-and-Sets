@@ -134,3 +134,82 @@ for(let amount of fruitMap.values()){
 for(let entry of fruitMap){
     console.log(entry);
 }
+
+/*
+Extra) Create objects for every entry. Object name will be your brand name.
+        Objects will have 2 properties. 
+        1. key: name
+        2. key: numberType (single even) 
+
+        Do this with for loop not maually!
+
+        */
+
+//----------Task For Maps-------------//
+/*
+    1) Create a Map and name it taskMap.
+
+    2) Create entries with numbers for taskMap and set some brands for values.
+
+    3) create two lists for odd and even numbers. Lists can be array.
+        ! you should use for-of
+
+    4) Log two lists on console
+
+    5) Create objects for every number until count of brands. These objects will contain
+    numberType as key and value will be single or even.
+    
+    let o1 = {numberType: 'odd'};
+    let o2 = {numberType: 'even'};
+    let o3 = {numberType: 'odd'};
+    ...
+    ! do not write this code. Just result will be same. 
+    ! You should produce this result with for or for-of
+
+    6) Create new 2 Maps and use these objects as key. You will produce the maps from your
+    arrays. (Hint: You need for loop) 
+
+    o1{numberType: 'odd'}, Apple
+
+*/
+
+//Step 1
+let taskMap = new Map();
+
+//Step 2
+taskMap.set(1, 'Apple');
+taskMap.set(2, 'Samsung');
+taskMap.set(3, 'Huawei');
+taskMap.set(4, 'Hp');
+
+//Step 3
+let odd = [];
+let even = [];
+
+for(let key of taskMap.keys()){
+    if (key % 2 == 0){
+        even.push(taskMap.get(key));
+    } else{
+        odd.push(taskMap.get(key));
+    }
+}
+
+console.log('Odd List: ' + odd +'\nEven List: ' + even);
+
+console.log(odd);
+console.log(even);
+
+//Step 5
+let oddMap = new Map();
+let evenMap = new Map();
+
+for(i=0; i < odd.length; i++){
+    oddMap.set({numberType: 'odd'}, odd[i]);
+}
+
+for(i=0; i < even.length; i++){
+    evenMap.set({numberType: 'even'}, even[i]);
+}
+
+console.log(oddMap);
+console.log(evenMap);
